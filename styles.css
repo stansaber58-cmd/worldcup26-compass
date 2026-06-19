@@ -1,0 +1,644 @@
+:root {
+  color-scheme: light;
+  --ink: #122238;
+  --muted: #607086;
+  --paper: #f7f3e8;
+  --panel: #fffdf6;
+  --line: #d8dddf;
+  --navy: #123a5c;
+  --blue: #276fbd;
+  --red: #d93f35;
+  --green: #168455;
+  --gold: #f4c84a;
+  --shadow: 0 18px 44px rgba(17, 34, 56, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(135deg, #123a5c 0%, #0f5d56 36%, #efe4c4 36%, #f8f4e8 100%);
+  background-size: 28px 28px, 28px 28px, auto;
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  letter-spacing: 0;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.shell {
+  width: min(1240px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 42px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 20px;
+  align-items: end;
+  min-height: 230px;
+  color: #fff;
+}
+
+.eyebrow,
+.panel-head span,
+.section-title span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 8px;
+  border: 1px solid rgba(18, 34, 56, 0.18);
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.hero h1 {
+  max-width: 780px;
+  margin: 14px 0 10px;
+  font-size: 58px;
+  line-height: 0.98;
+}
+
+.hero p {
+  max-width: 780px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.tournament-card {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  background: #101b2d;
+  box-shadow: var(--shadow);
+}
+
+.tournament-card span {
+  color: var(--gold);
+  font-size: 48px;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.tournament-card strong {
+  font-size: 26px;
+}
+
+.tournament-card em {
+  color: #9bd7ff;
+  font-style: normal;
+  font-weight: 850;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.summary-grid article,
+.panel,
+.timeline-section,
+.submission-section {
+  border: 2px solid rgba(18, 34, 56, 0.16);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.summary-grid article {
+  min-height: 132px;
+  padding: 16px;
+}
+
+.summary-grid span,
+.country,
+.muted,
+.map-note,
+.phase-card strong {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.summary-grid strong {
+  display: block;
+  margin: 8px 0;
+  font-size: 23px;
+}
+
+.summary-grid p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.panel {
+  padding: 16px;
+}
+
+.panel-head {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.panel-head.inline {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.panel-head h2,
+.section-title h2,
+.submission-section h2 {
+  margin: 0;
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+.control-block {
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.control-block h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.route-grid,
+.segmented {
+  display: grid;
+  gap: 8px;
+}
+
+.route-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.segmented {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.route-grid button,
+.segmented button,
+.btn,
+.watchlist button,
+.save-city {
+  min-height: 40px;
+  border: 2px solid rgba(18, 34, 56, 0.18);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.route-grid button.active,
+.segmented button.active {
+  border-color: var(--ink);
+  background: var(--gold);
+}
+
+.field-label {
+  display: block;
+  margin: 10px 0 6px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 850;
+}
+
+select {
+  width: 100%;
+  min-height: 42px;
+  border: 2px solid rgba(18, 34, 56, 0.2);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  font-weight: 850;
+}
+
+.time-output {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px dashed rgba(18, 34, 56, 0.26);
+  border-radius: 8px;
+  background: #f8fbff;
+}
+
+.time-output strong {
+  font-size: 18px;
+}
+
+.time-output em {
+  color: var(--red);
+  font-style: normal;
+  font-weight: 900;
+}
+
+.watchlist {
+  display: grid;
+  gap: 8px;
+}
+
+.watchlist p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.watchlist button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.main-stage {
+  display: grid;
+  gap: 14px;
+}
+
+.north-map {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  border: 2px solid rgba(18, 34, 56, 0.18);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(39, 111, 189, 0.14), transparent 38%),
+    linear-gradient(180deg, #eaf6ff 0%, #f6f0dc 55%, #fde2c7 100%);
+}
+
+.map-land {
+  position: absolute;
+  border: 2px solid rgba(18, 34, 56, 0.16);
+  color: rgba(18, 34, 56, 0.28);
+  font-size: 34px;
+  font-weight: 950;
+  letter-spacing: 0;
+}
+
+.map-land.canada {
+  inset: 9% 14% auto 8%;
+  height: 24%;
+  background: rgba(39, 111, 189, 0.08);
+}
+
+.map-land.usa {
+  inset: 30% 7% auto 12%;
+  height: 38%;
+  background: rgba(22, 132, 85, 0.08);
+}
+
+.map-land.mexico {
+  inset: auto 40% 8% 28%;
+  height: 22%;
+  background: rgba(217, 63, 53, 0.08);
+}
+
+.city-dot {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 28px;
+  padding: 2px 7px 2px 3px;
+  transform: translate(-9px, -9px);
+  border: 1px solid rgba(18, 34, 56, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--ink);
+  opacity: 0.4;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.city-dot span {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 2px rgba(18, 34, 56, 0.16);
+}
+
+.city-dot.mex span {
+  background: var(--red);
+}
+
+.city-dot.can span {
+  background: var(--green);
+}
+
+.city-dot.active {
+  opacity: 1;
+  transform: translate(-9px, -9px) scale(1.04);
+}
+
+.city-dot em {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.btn.compact {
+  min-width: 132px;
+  padding: 0 12px;
+  background: #101b2d;
+  color: #fff;
+}
+
+.map-note {
+  margin: 12px 0 0;
+  line-height: 1.6;
+}
+
+.city-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.city-card {
+  position: relative;
+  min-height: 268px;
+  padding: 15px;
+  border: 2px solid rgba(18, 34, 56, 0.14);
+  border-top: 6px solid var(--blue);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.city-card.can {
+  border-top-color: var(--green);
+}
+
+.city-card.mex {
+  border-top-color: var(--red);
+}
+
+.save-city {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  min-height: 34px;
+  padding: 0;
+}
+
+.save-city.saved {
+  background: var(--gold);
+  border-color: var(--ink);
+}
+
+.city-card h3 {
+  margin: 8px 42px 2px 0;
+  font-size: 24px;
+}
+
+.english {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 850;
+}
+
+dl {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+dl div {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 8px;
+}
+
+dt {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 850;
+}
+
+dd {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.city-card p:last-child {
+  margin: 0;
+  color: #39485c;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.55;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 24px;
+  border: 2px dashed rgba(18, 34, 56, 0.2);
+  border-radius: 8px;
+  background: #fff;
+  text-align: center;
+  font-weight: 900;
+}
+
+.timeline-section,
+.submission-section {
+  margin-top: 18px;
+  padding: 18px;
+}
+
+.section-title,
+.submission-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.phase-rail {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(170px, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.phase-card {
+  min-height: 190px;
+  padding: 14px;
+  border: 2px solid rgba(18, 34, 56, 0.14);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.phase-card span {
+  display: inline-flex;
+  padding: 3px 8px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.phase-card h3 {
+  margin: 12px 0 4px;
+  font-size: 19px;
+}
+
+.phase-card p {
+  margin: 10px 0 0;
+  color: #39485c;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.phase-today {
+  align-self: end;
+  min-width: 210px;
+  margin: 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: #101b2d;
+  color: #fff;
+  font-weight: 850;
+  line-height: 1.5;
+}
+
+.submission-section p {
+  max-width: 720px;
+  margin: 0;
+  color: #39485c;
+  font-size: 16px;
+  font-weight: 760;
+  line-height: 1.7;
+}
+
+.toast {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  max-width: 320px;
+  padding: 12px 14px;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  font-weight: 900;
+  transform: translateY(24px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (max-width: 1040px) {
+  .hero,
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .tournament-card {
+    width: min(100%, 460px);
+  }
+
+  .city-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .shell {
+    width: min(100% - 20px, 560px);
+    padding-top: 18px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .summary-grid,
+  .city-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .route-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .segmented {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .panel-head.inline,
+  .section-title,
+  .submission-section {
+    display: grid;
+  }
+
+  .north-map {
+    min-height: 520px;
+  }
+
+  .city-dot em {
+    display: none;
+  }
+
+  .phase-rail {
+    grid-template-columns: 1fr;
+    overflow: visible;
+  }
+}
