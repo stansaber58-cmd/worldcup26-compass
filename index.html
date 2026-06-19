@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#123a5c">
+  <meta name="description" content="2026 美加墨世界杯观赛指挥舱：16 座主办城市、三国时区、104 场赛程节点和北京时间观赛路线。">
+  <meta property="og:title" content="美加墨 2026 观赛指挥舱">
+  <meta property="og:description" content="给中国球迷的 2026 世界杯主办城市、时区和观赛路线工具。">
+  <title>美加墨 2026 观赛指挥舱</title>
+  <link rel="stylesheet" href="styles.css?v=20260620">
+  <script defer src="app.js?v=20260620"></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">FIFA WORLD CUP 26 · CANADA MEXICO USA</span>
+        <h1>美加墨观赛指挥舱</h1>
+        <p>把 16 座主办城市、三国时区、104 场比赛和北京时间，整理成一张能直接用的 2026 世界杯观赛地图。</p>
+      </div>
+      <aside class="tournament-card" aria-label="本届世界杯关键数字">
+        <span>2026</span>
+        <strong>48 队 · 104 场</strong>
+        <em>6.11 开幕 · 7.19 决赛</em>
+      </aside>
+    </header>
+
+    <section class="summary-grid" aria-label="赛事摘要">
+      <article>
+        <span>主办国家</span>
+        <strong>加拿大 / 墨西哥 / 美国</strong>
+        <p>第一次三国联合主办的男足世界杯。</p>
+      </article>
+      <article>
+        <span>主办城市</span>
+        <strong>16 城</strong>
+        <p>横跨太平洋、山地、中部、东海岸和墨西哥中部时区。</p>
+      </article>
+      <article>
+        <span>中国观赛</span>
+        <strong>多数比赛在凌晨至上午</strong>
+        <p>本工具按北京时间解释当地开球窗口。</p>
+      </article>
+    </section>
+
+    <section class="dashboard" aria-label="观赛指挥舱">
+      <aside class="panel controls">
+        <div class="panel-head">
+          <span>01 / 选择你的观赛模式</span>
+          <h2>让赛程变成路线</h2>
+        </div>
+
+        <div class="control-block">
+          <h3>路线主题</h3>
+          <div class="route-grid" id="route-tabs" role="tablist" aria-label="路线主题"></div>
+        </div>
+
+        <div class="control-block">
+          <h3>筛选主办国</h3>
+          <div class="segmented" id="country-tabs" aria-label="筛选主办国">
+            <button class="active" type="button" data-country="all">全部</button>
+            <button type="button" data-country="USA">美国</button>
+            <button type="button" data-country="CAN">加拿大</button>
+            <button type="button" data-country="MEX">墨西哥</button>
+          </div>
+        </div>
+
+        <div class="control-block">
+          <h3>北京时间换算</h3>
+          <label class="field-label" for="city-select">选择主办城市</label>
+          <select id="city-select"></select>
+          <label class="field-label" for="kickoff-select">当地开球时间</label>
+          <select id="kickoff-select">
+            <option value="12:00">12:00 午场</option>
+            <option value="15:00" selected>15:00 下午场</option>
+            <option value="18:00">18:00 黄金场</option>
+            <option value="21:00">21:00 夜场</option>
+          </select>
+          <output class="time-output" id="time-output">选择城市后生成北京时间</output>
+        </div>
+
+        <div class="control-block">
+          <h3>我的关注城市</h3>
+          <p class="muted">点城市卡片右上角的「＋」加入本地清单，只保存在当前浏览器。</p>
+          <div class="watchlist" id="watchlist"></div>
+        </div>
+      </aside>
+
+      <section class="main-stage">
+        <article class="panel map-panel" aria-label="16 座主办城市地图">
+          <div class="panel-head inline">
+            <div>
+              <span>02 / 16 城地图</span>
+              <h2 id="route-title">三国主办总览</h2>
+            </div>
+            <button class="btn compact" id="copy-plan" type="button">复制观赛清单</button>
+          </div>
+
+          <div class="north-map" id="north-map" aria-label="北美主办城市示意图"></div>
+          <p class="map-note" id="route-note"></p>
+        </article>
+
+        <section class="city-grid" id="city-grid" aria-label="主办城市列表"></section>
+      </section>
+    </section>
+
+    <section class="timeline-section" aria-label="关键赛程节点">
+      <div class="section-title">
+        <span>03 / 关键节点</span>
+        <h2>从墨西哥城开幕，到纽约新泽西决赛</h2>
+      </div>
+      <div class="phase-rail" id="phase-rail"></div>
+    </section>
+
+    <section class="submission-section" aria-label="参赛说明">
+      <div>
+        <span class="eyebrow">NO SERVER · NO CLOUD</span>
+        <h2>一个贴着本届世界杯做的静态工具</h2>
+      </div>
+      <p>它不预测比分，也不做泛世界杯小游戏，而是把 2026 美加墨世界杯最特殊的部分直接做成产品：三国联合主办、16 城分布、跨时区观赛、北京时间换算、路线式看球和关键赛程节点。</p>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
