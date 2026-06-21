@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#123a5c">
-  <meta name="description" content="2026 美加墨世界杯观赛指挥舱：16 座主办城市、三国时区、104 场赛程节点和北京时间观赛路线。">
+  <meta name="description" content="2026 美加墨世界杯观赛指挥舱：当前积分、晋级图、Polymarket 预测、16 座主办城市和北京时间观赛路线。">
   <meta property="og:title" content="美加墨 2026 观赛指挥舱">
-  <meta property="og:description" content="给中国球迷的 2026 世界杯主办城市、时区和观赛路线工具。">
+  <meta property="og:description" content="给中国球迷的 2026 世界杯当前赛况、晋级图、预测概率和主办城市观赛工具。">
   <title>美加墨 2026 观赛指挥舱</title>
-  <link rel="stylesheet" href="styles.css?v=20260620">
-  <script defer src="app.js?v=20260620"></script>
+  <link rel="stylesheet" href="styles.css?v=20260620-score">
+  <script defer src="app.js?v=20260620-score"></script>
 </head>
 <body>
   <main class="shell">
@@ -17,7 +17,7 @@
       <div class="hero-copy">
         <span class="eyebrow">FIFA WORLD CUP 26 · CANADA MEXICO USA</span>
         <h1>美加墨观赛指挥舱</h1>
-        <p>把 16 座主办城市、三国时区、104 场比赛和北京时间，整理成一张能直接用的 2026 世界杯观赛地图。</p>
+        <p>把当前积分、晋级路径、市场预测、16 座主办城市和北京时间，整理成一张能直接用的 2026 世界杯观赛地图。</p>
       </div>
       <aside class="tournament-card" aria-label="本届世界杯关键数字">
         <span>2026</span>
@@ -38,10 +38,33 @@
         <p>横跨太平洋、山地、中部、东海岸和墨西哥中部时区。</p>
       </article>
       <article>
-        <span>中国观赛</span>
-        <strong>多数比赛在凌晨至上午</strong>
-        <p>本工具按北京时间解释当地开球窗口。</p>
+        <span>当前赛况</span>
+        <strong>小组积分 + 晋级区 + 市场概率</strong>
+        <p>一屏看懂谁暂居 32 强区，谁还在追赶。</p>
       </article>
+    </section>
+
+    <section class="progress-section" aria-label="目前赛况和晋级图">
+      <div class="section-title">
+        <div>
+          <span>00 / 目前赛况</span>
+          <h2>积分榜、晋级区和市场预测一屏看懂</h2>
+        </div>
+        <p>静态快照：2026-06-20，来自 FOX Sports 积分榜和 Polymarket World Cup props。预测概率不是官方赛果，只是市场价格。</p>
+      </div>
+      <div class="progress-tabs" id="progress-tabs" role="tablist" aria-label="切换赛况视图">
+        <button class="active" type="button" data-progress-tab="groups">小组赛况</button>
+        <button type="button" data-progress-tab="bracket">晋级对阵图</button>
+        <button type="button" data-progress-tab="markets">Polymarket 预测</button>
+      </div>
+      <div class="legend-row" aria-label="图例">
+        <span><i class="legend-dot seed-one"></i>小组第 1</span>
+        <span><i class="legend-dot seed-two"></i>小组第 2</span>
+        <span><i class="legend-dot third-in"></i>前 8 个小组第 3</span>
+        <span><i class="legend-dot outside"></i>仍在追赶</span>
+        <span><i class="legend-dot market"></i>市场隐含概率</span>
+      </div>
+      <div id="progress-panel"></div>
     </section>
 
     <section class="dashboard" aria-label="观赛指挥舱">
@@ -118,7 +141,7 @@
         <span class="eyebrow">NO SERVER · NO CLOUD</span>
         <h2>一个贴着本届世界杯做的静态工具</h2>
       </div>
-      <p>它不预测比分，也不做泛世界杯小游戏，而是把 2026 美加墨世界杯最特殊的部分直接做成产品：三国联合主办、16 城分布、跨时区观赛、北京时间换算、路线式看球和关键赛程节点。</p>
+      <p>它不做泛世界杯小游戏，而是把 2026 美加墨世界杯最特殊、也最需要整理的部分直接做成产品：当前积分、晋级区、第三名榜、Polymarket 概率、三国联合主办、16 城分布、跨时区观赛、北京时间换算和关键赛程节点。</p>
     </section>
   </main>
 
