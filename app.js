@@ -72,6 +72,131 @@ const PHASES = [
   { date: "7.18-7.19", title: "收官周末", place: "迈阿密 / 纽约新泽西", body: "三四名在迈阿密，决赛在纽约新泽西，2026 北美路线闭环。" },
 ];
 
+const STANDINGS_SNAPSHOT = {
+  date: "2026-06-20",
+  source: "FOX Sports live standings",
+  groups: [
+    { letter: "A", teams: [
+      { name: "Mexico", zh: "墨西哥", mp: 2, record: "2-0-0", gf: 3, ga: 0, gd: 3, pts: 6 },
+      { name: "South Korea", zh: "韩国", mp: 2, record: "1-0-1", gf: 2, ga: 2, gd: 0, pts: 3 },
+      { name: "Czechia", zh: "捷克", mp: 2, record: "0-1-1", gf: 2, ga: 3, gd: -1, pts: 1 },
+      { name: "South Africa", zh: "南非", mp: 2, record: "0-1-1", gf: 1, ga: 3, gd: -2, pts: 1 },
+    ] },
+    { letter: "B", teams: [
+      { name: "Canada", zh: "加拿大", mp: 2, record: "1-1-0", gf: 7, ga: 1, gd: 6, pts: 4 },
+      { name: "Switzerland", zh: "瑞士", mp: 2, record: "1-1-0", gf: 5, ga: 2, gd: 3, pts: 4 },
+      { name: "Bosnia and Herzegovina", zh: "波黑", mp: 2, record: "0-1-1", gf: 2, ga: 5, gd: -3, pts: 1 },
+      { name: "Qatar", zh: "卡塔尔", mp: 2, record: "0-1-1", gf: 1, ga: 7, gd: -6, pts: 1 },
+    ] },
+    { letter: "C", teams: [
+      { name: "Brazil", zh: "巴西", mp: 2, record: "1-1-0", gf: 4, ga: 1, gd: 3, pts: 4 },
+      { name: "Morocco", zh: "摩洛哥", mp: 2, record: "1-1-0", gf: 2, ga: 1, gd: 1, pts: 4 },
+      { name: "Scotland", zh: "苏格兰", mp: 2, record: "1-0-1", gf: 1, ga: 1, gd: 0, pts: 3 },
+      { name: "Haiti", zh: "海地", mp: 2, record: "0-0-2", gf: 0, ga: 4, gd: -4, pts: 0 },
+    ] },
+    { letter: "D", teams: [
+      { name: "United States", zh: "美国", mp: 2, record: "2-0-0", gf: 6, ga: 1, gd: 5, pts: 6 },
+      { name: "Australia", zh: "澳大利亚", mp: 2, record: "1-0-1", gf: 2, ga: 2, gd: 0, pts: 3 },
+      { name: "Paraguay", zh: "巴拉圭", mp: 2, record: "1-0-1", gf: 2, ga: 4, gd: -2, pts: 3 },
+      { name: "Türkiye", zh: "土耳其", mp: 2, record: "0-0-2", gf: 0, ga: 3, gd: -3, pts: 0 },
+    ] },
+    { letter: "E", teams: [
+      { name: "Germany", zh: "德国", mp: 1, record: "1-0-0", gf: 7, ga: 1, gd: 6, pts: 3 },
+      { name: "Ivory Coast", zh: "科特迪瓦", mp: 1, record: "1-0-0", gf: 1, ga: 0, gd: 1, pts: 3 },
+      { name: "Ecuador", zh: "厄瓜多尔", mp: 1, record: "0-0-1", gf: 0, ga: 1, gd: -1, pts: 0 },
+      { name: "Curacao", zh: "库拉索", mp: 1, record: "0-0-1", gf: 1, ga: 7, gd: -6, pts: 0 },
+    ] },
+    { letter: "F", teams: [
+      { name: "Sweden", zh: "瑞典", mp: 1, record: "1-0-0", gf: 5, ga: 1, gd: 4, pts: 3 },
+      { name: "Japan", zh: "日本", mp: 1, record: "0-1-0", gf: 2, ga: 2, gd: 0, pts: 1 },
+      { name: "Netherlands", zh: "荷兰", mp: 1, record: "0-1-0", gf: 2, ga: 2, gd: 0, pts: 1 },
+      { name: "Tunisia", zh: "突尼斯", mp: 1, record: "0-0-1", gf: 1, ga: 5, gd: -4, pts: 0 },
+    ] },
+    { letter: "G", teams: [
+      { name: "New Zealand", zh: "新西兰", mp: 1, record: "0-1-0", gf: 2, ga: 2, gd: 0, pts: 1 },
+      { name: "Iran", zh: "伊朗", mp: 1, record: "0-1-0", gf: 2, ga: 2, gd: 0, pts: 1 },
+      { name: "Belgium", zh: "比利时", mp: 1, record: "0-1-0", gf: 1, ga: 1, gd: 0, pts: 1 },
+      { name: "Egypt", zh: "埃及", mp: 1, record: "0-1-0", gf: 1, ga: 1, gd: 0, pts: 1 },
+    ] },
+    { letter: "H", teams: [
+      { name: "Uruguay", zh: "乌拉圭", mp: 1, record: "0-1-0", gf: 1, ga: 1, gd: 0, pts: 1 },
+      { name: "Saudi Arabia", zh: "沙特阿拉伯", mp: 1, record: "0-1-0", gf: 1, ga: 1, gd: 0, pts: 1 },
+      { name: "Spain", zh: "西班牙", mp: 1, record: "0-1-0", gf: 0, ga: 0, gd: 0, pts: 1 },
+      { name: "Cape Verde", zh: "佛得角", mp: 1, record: "0-1-0", gf: 0, ga: 0, gd: 0, pts: 1 },
+    ] },
+    { letter: "I", teams: [
+      { name: "Norway", zh: "挪威", mp: 1, record: "1-0-0", gf: 4, ga: 1, gd: 3, pts: 3 },
+      { name: "France", zh: "法国", mp: 1, record: "1-0-0", gf: 3, ga: 1, gd: 2, pts: 3 },
+      { name: "Senegal", zh: "塞内加尔", mp: 1, record: "0-0-1", gf: 1, ga: 3, gd: -2, pts: 0 },
+      { name: "Iraq", zh: "伊拉克", mp: 1, record: "0-0-1", gf: 1, ga: 4, gd: -3, pts: 0 },
+    ] },
+    { letter: "J", teams: [
+      { name: "Argentina", zh: "阿根廷", mp: 1, record: "1-0-0", gf: 3, ga: 0, gd: 3, pts: 3 },
+      { name: "Austria", zh: "奥地利", mp: 1, record: "1-0-0", gf: 3, ga: 1, gd: 2, pts: 3 },
+      { name: "Jordan", zh: "约旦", mp: 1, record: "0-0-1", gf: 1, ga: 3, gd: -2, pts: 0 },
+      { name: "Algeria", zh: "阿尔及利亚", mp: 1, record: "0-0-1", gf: 0, ga: 3, gd: -3, pts: 0 },
+    ] },
+    { letter: "K", teams: [
+      { name: "Colombia", zh: "哥伦比亚", mp: 1, record: "1-0-0", gf: 3, ga: 1, gd: 2, pts: 3 },
+      { name: "DR Congo", zh: "民主刚果", mp: 1, record: "0-1-0", gf: 1, ga: 1, gd: 0, pts: 1 },
+      { name: "Portugal", zh: "葡萄牙", mp: 1, record: "0-1-0", gf: 1, ga: 1, gd: 0, pts: 1 },
+      { name: "Uzbekistan", zh: "乌兹别克斯坦", mp: 1, record: "0-0-1", gf: 1, ga: 3, gd: -2, pts: 0 },
+    ] },
+    { letter: "L", teams: [
+      { name: "England", zh: "英格兰", mp: 1, record: "1-0-0", gf: 4, ga: 2, gd: 2, pts: 3 },
+      { name: "Ghana", zh: "加纳", mp: 1, record: "1-0-0", gf: 1, ga: 0, gd: 1, pts: 3 },
+      { name: "Panama", zh: "巴拿马", mp: 1, record: "0-0-1", gf: 0, ga: 1, gd: -1, pts: 0 },
+      { name: "Croatia", zh: "克罗地亚", mp: 1, record: "0-0-1", gf: 2, ga: 4, gd: -2, pts: 0 },
+    ] },
+  ],
+  thirdPlace: [
+    { group: "C", name: "Scotland", zh: "苏格兰", mp: 2, record: "1-0-1", gf: 1, ga: 1, gd: 0, pts: 3 },
+    { group: "D", name: "Paraguay", zh: "巴拉圭", mp: 2, record: "1-0-1", gf: 2, ga: 4, gd: -2, pts: 3 },
+    { group: "F", name: "Netherlands", zh: "荷兰", mp: 1, record: "0-1-0", gf: 2, ga: 2, gd: 0, pts: 1 },
+    { group: "G", name: "Belgium", zh: "比利时", mp: 1, record: "0-1-0", gf: 1, ga: 1, gd: 0, pts: 1 },
+    { group: "K", name: "Portugal", zh: "葡萄牙", mp: 1, record: "0-1-0", gf: 1, ga: 1, gd: 0, pts: 1 },
+    { group: "H", name: "Spain", zh: "西班牙", mp: 1, record: "0-1-0", gf: 0, ga: 0, gd: 0, pts: 1 },
+    { group: "A", name: "Czechia", zh: "捷克", mp: 2, record: "0-1-1", gf: 2, ga: 3, gd: -1, pts: 1 },
+    { group: "B", name: "Bosnia and Herzegovina", zh: "波黑", mp: 2, record: "0-1-1", gf: 2, ga: 5, gd: -3, pts: 1 },
+    { group: "E", name: "Ecuador", zh: "厄瓜多尔", mp: 1, record: "0-0-1", gf: 0, ga: 1, gd: -1, pts: 0 },
+    { group: "L", name: "Panama", zh: "巴拿马", mp: 1, record: "0-0-1", gf: 0, ga: 1, gd: -1, pts: 0 },
+    { group: "I", name: "Senegal", zh: "塞内加尔", mp: 1, record: "0-0-1", gf: 1, ga: 3, gd: -2, pts: 0 },
+    { group: "J", name: "Jordan", zh: "约旦", mp: 1, record: "0-0-1", gf: 1, ga: 3, gd: -2, pts: 0 },
+  ],
+};
+
+const POLYMARKET_SNAPSHOT = {
+  date: "2026-06-20",
+  source: "Polymarket World Cup props",
+  winner: [
+    { name: "France", zh: "法国", probability: "18%" },
+    { name: "Spain", zh: "西班牙", probability: "14%" },
+  ],
+  groups: [
+    { group: "D", title: "D 组头名", volume: "$2M", outcomes: [{ zh: "美国", probability: "100%" }, { zh: "土耳其", probability: "<1%" }] },
+    { group: "C", title: "C 组头名", volume: "$1M", outcomes: [{ zh: "巴西", probability: "67%" }, { zh: "摩洛哥", probability: "29%" }] },
+    { group: "B", title: "B 组头名", volume: "$1M", outcomes: [{ zh: "加拿大", probability: "60%" }, { zh: "瑞士", probability: "41%" }] },
+    { group: "I", title: "I 组头名", volume: "$874K", outcomes: [{ zh: "法国", probability: "78%" }, { zh: "挪威", probability: "22%" }] },
+    { group: "J", title: "J 组头名", volume: "$861K", outcomes: [{ zh: "阿根廷", probability: "85%" }, { zh: "奥地利", probability: "14%" }] },
+    { group: "E", title: "E 组头名", volume: "$783K", outcomes: [{ zh: "德国", probability: "76%" }, { zh: "科特迪瓦", probability: "22%" }] },
+    { group: "K", title: "K 组头名", volume: "$690K", outcomes: [{ zh: "哥伦比亚", probability: "49%" }, { zh: "葡萄牙", probability: "46%" }] },
+    { group: "H", title: "H 组头名", volume: "$660K", outcomes: [{ zh: "西班牙", probability: "74%" }, { zh: "乌拉圭", probability: "21%" }] },
+    { group: "F", title: "F 组头名", volume: "$640K", outcomes: [{ zh: "荷兰", probability: "44%" }, { zh: "瑞典", probability: "30%" }] },
+    { group: "G", title: "G 组头名", volume: "$568K", outcomes: [{ zh: "比利时", probability: "64%" }, { zh: "埃及", probability: "25%" }] },
+    { group: "L", title: "L 组头名", volume: "$426K", outcomes: [{ zh: "英格兰", probability: "93%" }, { zh: "加纳", probability: "5%" }] },
+  ],
+};
+
+const BRACKET_STEPS = [
+  { label: "小组赛", count: "48", note: "12 组，每组 4 队" },
+  { label: "32 强", count: "32", note: "前 2 + 8 个最佳第 3" },
+  { label: "16 强", count: "16", note: "淘汰赛第一轮胜者" },
+  { label: "8 强", count: "8", note: "进入四分之一决赛" },
+  { label: "4 强", count: "4", note: "半决赛席位" },
+  { label: "决赛", count: "2", note: "纽约新泽西收官" },
+  { label: "冠军", count: "1", note: "7 月 19 日产生" },
+];
+
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
@@ -80,6 +205,7 @@ const state = {
   country: "all",
   selectedCity: "mexicocity",
   kickoff: "15:00",
+  progressTab: "groups",
   watchlist: loadWatchlist(),
 };
 
@@ -225,6 +351,212 @@ function renderPhases() {
   `).join("") + `<p class="phase-today">今天：${todayKey}（页面按浏览器日期生成；赛事节点为静态参照）</p>`;
 }
 
+function probabilityWidth(probability) {
+  if (probability.startsWith("<")) return 1;
+  const value = Number(probability.replace("%", ""));
+  return Number.isFinite(value) ? Math.max(1, Math.min(100, value)) : 1;
+}
+
+function getGroupMarket(letter) {
+  return POLYMARKET_SNAPSHOT.groups.find((market) => market.group === letter);
+}
+
+function getThirdPlaceKey(team) {
+  return `${team.group}:${team.name}`;
+}
+
+function getTopThirdKeys() {
+  return new Set(STANDINGS_SNAPSHOT.thirdPlace.slice(0, 8).map(getThirdPlaceKey));
+}
+
+function getTeamStatus(group, team, index) {
+  const thirdKey = `${group.letter}:${team.name}`;
+  if (index === 0) return { className: "seed-one", label: "小组第 1", seed: `${group.letter}1` };
+  if (index === 1) return { className: "seed-two", label: "小组第 2", seed: `${group.letter}2` };
+  if (index === 2 && getTopThirdKeys().has(thirdKey)) return { className: "third-in", label: "第 3 暂进", seed: `3${group.letter}` };
+  return { className: "outside", label: "追赶中", seed: "--" };
+}
+
+function getProjectedEntrants() {
+  const directEntrants = STANDINGS_SNAPSHOT.groups.flatMap((group) => (
+    group.teams.slice(0, 2).map((team, index) => ({
+      ...team,
+      group: group.letter,
+      seed: `${group.letter}${index + 1}`,
+      className: index === 0 ? "seed-one" : "seed-two",
+      label: index === 0 ? "小组第 1" : "小组第 2",
+    }))
+  ));
+  const thirdEntrants = STANDINGS_SNAPSHOT.thirdPlace.slice(0, 8).map((team) => ({
+    ...team,
+    seed: `3${team.group}`,
+    className: "third-in",
+    label: "最佳第 3",
+  }));
+  return [...directEntrants, ...thirdEntrants];
+}
+
+function renderSnapshotStrip() {
+  const matchesPlayed = STANDINGS_SNAPSHOT.groups
+    .flatMap((group) => group.teams)
+    .reduce((total, team) => total + team.mp, 0) / 2;
+  return `
+    <div class="snapshot-strip">
+      <article>
+        <strong>${matchesPlayed}/72</strong>
+        <span>小组赛已计入</span>
+      </article>
+      <article>
+        <strong>24+8</strong>
+        <span>小组前二 + 最佳第三名</span>
+      </article>
+      <article>
+        <strong>美 / 墨 / 加</strong>
+        <span>三支东道主都暂居小组第 1</span>
+      </article>
+      <article>
+        <strong>${POLYMARKET_SNAPSHOT.winner[0].zh} ${POLYMARKET_SNAPSHOT.winner[0].probability}</strong>
+        <span>冠军市场当前最高展示项</span>
+      </article>
+    </div>
+  `;
+}
+
+function renderGroupCards() {
+  return `
+    ${renderSnapshotStrip()}
+    <div class="group-grid">
+      ${STANDINGS_SNAPSHOT.groups.map((group) => {
+        const market = getGroupMarket(group.letter);
+        const marketText = market ? `${market.outcomes[0].zh} ${market.outcomes[0].probability}` : "暂无市场快照";
+        return `
+          <article class="standings-card">
+            <header>
+              <strong>GROUP ${group.letter}</strong>
+              <span>${marketText}</span>
+            </header>
+            <div class="standings-head" aria-hidden="true">
+              <span>球队</span><span>赛</span><span>胜平负</span><span>净</span><span>分</span>
+            </div>
+            ${group.teams.map((team, index) => {
+              const status = getTeamStatus(group, team, index);
+              return `
+                <div class="team-row ${status.className}">
+                  <div>
+                    <em>${index + 1}</em>
+                    <strong>${team.zh}</strong>
+                    <small>${status.label}</small>
+                  </div>
+                  <span>${team.mp}</span>
+                  <span>${team.record}</span>
+                  <span>${team.gd > 0 ? "+" : ""}${team.gd}</span>
+                  <b>${team.pts}</b>
+                </div>
+              `;
+            }).join("")}
+          </article>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function renderBracket() {
+  const entrants = getProjectedEntrants();
+  return `
+    ${renderSnapshotStrip()}
+    <div class="bracket-note">
+      目前仍在小组赛阶段，淘汰赛官方对阵尚未锁定。下面是按当前积分榜投影的 32 强晋级区，用来快速理解每一步会如何收窄。
+    </div>
+    <div class="funnel-track" aria-label="晋级路径图">
+      ${BRACKET_STEPS.map((step, index) => `
+        <article class="funnel-step ${index === 1 ? "current" : ""}">
+          <strong>${step.count}</strong>
+          <span>${step.label}</span>
+          <em>${step.note}</em>
+        </article>
+      `).join("")}
+    </div>
+    <div class="bracket-board">
+      <article class="projected-entrants">
+        <header>
+          <h3>当前 32 强暂投影</h3>
+          <span>24 个小组前二 + 8 个最佳第三名</span>
+        </header>
+        <div class="entrant-grid">
+          ${entrants.map((team) => `
+            <span class="entrant-chip ${team.className}">
+              <b>${team.seed}</b>${team.zh}<em>${team.label}</em>
+            </span>
+          `).join("")}
+        </div>
+      </article>
+      <article class="third-ranking">
+        <header>
+          <h3>第三名榜</h3>
+          <span>前 8 暂进，后 4 暂出</span>
+        </header>
+        ${STANDINGS_SNAPSHOT.thirdPlace.map((team, index) => `
+          <div class="third-row ${index < 8 ? "third-in" : "outside"}">
+            <span>${index + 1}</span>
+            <strong>${team.zh}</strong>
+            <em>${team.group} 组</em>
+            <b>${team.pts} 分 / ${team.gd > 0 ? "+" : ""}${team.gd}</b>
+          </div>
+        `).join("")}
+      </article>
+    </div>
+  `;
+}
+
+function renderMarketBars(outcomes) {
+  return outcomes.map((outcome) => `
+    <div class="market-row">
+      <div>
+        <strong>${outcome.zh}</strong>
+        <span>${outcome.probability}</span>
+      </div>
+      <i style="--value:${probabilityWidth(outcome.probability)}%"></i>
+    </div>
+  `).join("");
+}
+
+function renderMarkets() {
+  return `
+    <div class="market-intro">
+      <article>
+        <span>冠军市场</span>
+        <h3>Polymarket 当前最高展示</h3>
+        ${renderMarketBars(POLYMARKET_SNAPSHOT.winner)}
+      </article>
+      <p>概率来自 Polymarket 市场价格，适合当作“群体预期”图例来看；它会随赛果、伤病、交易流动性变化，不等同于官方预测。</p>
+    </div>
+    <div class="market-grid">
+      ${POLYMARKET_SNAPSHOT.groups.map((market) => `
+        <article class="market-card">
+          <header>
+            <strong>${market.title}</strong>
+            <span>${market.volume} Vol.</span>
+          </header>
+          ${renderMarketBars(market.outcomes)}
+        </article>
+      `).join("")}
+    </div>
+  `;
+}
+
+function renderProgressPanel() {
+  const panel = $("#progress-panel");
+  if (!panel) return;
+  if (state.progressTab === "bracket") panel.innerHTML = renderBracket();
+  else if (state.progressTab === "markets") panel.innerHTML = renderMarkets();
+  else panel.innerHTML = renderGroupCards();
+
+  $$("#progress-tabs button").forEach((button) => {
+    button.classList.toggle("active", button.dataset.progressTab === state.progressTab);
+  });
+}
+
 function buildPlanText() {
   const route = getRoute();
   const cities = getVisibleCities();
@@ -281,6 +613,7 @@ function toggleWatchCity(cityId) {
 function renderAll() {
   renderRouteTabs();
   renderCitySelect();
+  renderProgressPanel();
   renderMap();
   renderCities();
   renderTime();
@@ -292,6 +625,12 @@ function renderAll() {
 }
 
 document.addEventListener("click", (event) => {
+  const progressButton = event.target.closest("[data-progress-tab]");
+  if (progressButton) {
+    state.progressTab = progressButton.dataset.progressTab;
+    renderProgressPanel();
+  }
+
   const routeButton = event.target.closest("[data-route]");
   if (routeButton) setRoute(routeButton.dataset.route);
 
